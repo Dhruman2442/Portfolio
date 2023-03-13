@@ -1,5 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, deprecated_member_use
 
+import 'dart:ffi';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,7 +14,10 @@ import 'package:google_fonts/google_fonts.dart';
 Widget Logo(BuildContext context) {
   return Container(
     margin: const EdgeInsets.only(top: 65),
-    width: MediaQuery.of(context).size.width * 0.70,
+    width: MediaQuery
+        .of(context)
+        .size
+        .width * 0.70,
     height: 175,
     decoration: BoxDecoration(
       image: DecorationImage(
@@ -24,7 +29,10 @@ Widget Logo(BuildContext context) {
     ),
     child: SizedBox(
       height: 200,
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery
+          .of(context)
+          .size
+          .width,
     ),
   );
 }
@@ -48,8 +56,7 @@ Widget Space(double height) {
   );
 }
 
-Widget Textfield1(
-    String ltext,
+Widget Textfield1(String ltext,
     String htext,
     double fontSize,
     Color color,
@@ -90,8 +97,7 @@ Widget Textfield1(
   );
 }
 
-Widget Textfield2(
-    String ltext,
+Widget Textfield2(String ltext,
     String htext,
     double fontSize,
     Color color,
@@ -134,8 +140,7 @@ Widget Textfield2(
   );
 }
 
-Widget TextfieldPassword(
-    String ltext,
+Widget TextfieldPassword(String ltext,
     String htext,
     double fontSize,
     Color color,
@@ -188,8 +193,7 @@ Widget TextfieldPassword(
   );
 }
 
-Widget Button1(
-    String text,
+Widget Button1(String text,
     double size,
     Color color,
     FontWeight fontWeight,
@@ -202,7 +206,10 @@ Widget Button1(
     decoration:
     const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8))),
     height: 50,
-    width: MediaQuery.of(context).size.width * 0.95,
+    width: MediaQuery
+        .of(context)
+        .size
+        .width * 0.95,
     child: ElevatedButton(
       onPressed: onPressed,
       // color: color,
@@ -212,8 +219,7 @@ Widget Button1(
   );
 }
 
-Widget TextButton1(
-    VoidCallback onpressed,
+Widget TextButton1(VoidCallback onpressed,
     String text,
     double fontSize,
     Color color,
@@ -230,10 +236,8 @@ Widget IconButtons(Icon icon, VoidCallback onpressed) {
   return IconButton(icon: icon, onPressed: onpressed);
 }
 
-Widget Cards(
-    Color color,
-    Widget child,
-    ) {
+Widget Cards(Color color,
+    Widget child,) {
   return Card(
     shadowColor: Colors.black,
     borderOnForeground: true,
@@ -241,8 +245,9 @@ Widget Cards(
     elevation: 5,
     margin: const EdgeInsets.all(10),
     color: color,
+
     shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(10))),
+        borderRadius: BorderRadius.all(Radius.circular(25))),
     child: child,
   );
 }
@@ -278,6 +283,7 @@ Widget customgamelisttile(Color colors, String images, VoidCallback onpress) {
   );
 }
 
+
 Widget WeaponsTiles() {
   return TextStyle1("Weapons", 16, Colors.white, FontWeight.bold,
       TextAlign.center, FontStyle.normal);
@@ -291,10 +297,8 @@ Widget MapsTiles() {
 //////////////////////////////////////////////////////////////////////////////////
 
 // News Page Widget
-Widget customnewstile(
-    String title,
-    Color color,
-    ) {
+Widget customnewstile(String title,
+    Color color,) {
   return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       shadowColor: Colors.white,
@@ -369,8 +373,8 @@ Widget customNewsDetails(String images, String title, String content) {
   );
 }
 
-Widget RolesTile(
-    String title, AssetImage images, Color colors, VoidCallback click) {
+Widget RolesTile(String title, AssetImage images, Color colors,
+    VoidCallback click) {
   return GestureDetector(
     onTap: click,
     child: Card(
@@ -542,8 +546,7 @@ Widget SliderMapListTile(String title, Color colors, String images) {
   ]);
 }
 
-Widget Tabs(
-    VoidCallback onPressed,
+Widget Tabs(VoidCallback onPressed,
     String text,
     double size,
     Color color,
@@ -570,7 +573,10 @@ Widget Tabs(
         ),
         // ),
         Container(
-          width: MediaQuery.of(context).size.width / 3,
+          width: MediaQuery
+              .of(context)
+              .size
+              .width / 3,
           margin: const EdgeInsets.only(bottom: 15),
           child: TextStyle1(
               text, size, tabtextcolor, fontWeight, textAlign, fontStyle),

@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+
+        backgroundColor: Colors.black
       ),
       home: SplashScreen(
         gradientBackground:
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         photoSize: 150.0,
         seconds: 3,
         navigateAfterSeconds: HomeScreen(),
-        loadingText: Text("Image Processor",
+        loadingText: Text("Portfolio",
             style: GoogleFonts.balooBhai2(color: Colors.white, fontSize: 50)),
         loaderColor: Colors.transparent,
         backgroundColor: Colors.white,
