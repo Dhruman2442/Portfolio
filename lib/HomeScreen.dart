@@ -32,88 +32,80 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     return Scaffold(
-        backgroundColor: Color(0xFF000000),
-        appBar: AppBar(backgroundColor: Color(0xFF302E57)),
-        bottomNavigationBar: CurvedNavigationBar(
-            backgroundColor: Color(0xFF000000),
-            color: Color(0xFF302E57),
-            onTap: _onItemTapped,
-            items: <Widget>[
-              Icon(
-                Icons.home,
-                color: Color(0xFFFFFFFF),
-                size: std_icon_size,
-              ),
-              Icon(
-                Icons.search,
-                color: Color(0xFFFFFFFF),
-                size: std_icon_size,
-              ),
-              Icon(
-                Icons.settings,
-                color: Color(0xFFFFFFFF),
-                size: std_icon_size,
-              ),
-            ]),
-        body: Center(
-          child: Column(children: [
-            FadeAnimation(
-                2,
-                //   Column(
-                //     mainAxisAlignment: MainAxisAlignment.center,
-                //     children: [
-                //       Text(
-                //         'Slider Value: ${_sliderValue.round()}',
-                //         style: TextStyle(fontSize: 24.0),
-                //       ),
-                //       SizedBox(height: 24.0),
-                //       Slider(
-                //         value: _sliderValue,
-                //         min: 0.0,
-                //         max: 100.0,
-                //         divisions: 10,
-                //         label: '${_sliderValue.round()}',
-                //         onChanged: (value) {
-                //           setState(() {
-                //             _sliderValue = value;
-                //           });
-                //         },
-                //       ),
-                //     ],
-                //   ),
-                Cards(
-                    Color(0xFF302E57),
-                    Container(
-                      child: Text("Hello World"),
-                    ))),
-            CarouselSlider(
-              options: CarouselOptions(
-                autoPlay: true,
-                autoPlayInterval: Duration(seconds: 3),
-                height: 200.0,
-                aspectRatio: 1,
-                scrollPhysics: BouncingScrollPhysics(),
-                enlargeCenterPage: true,
-              ),
-              items: imageURL.map((imageURL) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Container(
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      margin: EdgeInsets.symmetric(horizontal: 1.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        image: DecorationImage(
-                          image: AssetImage(imageURL),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    );
-                  },
-                );
-              }).toList(),
+      backgroundColor: Color(0xFF000000),
+      // appBar: AppBar(backgroundColor: Color(0xFF302E57)),
+      bottomNavigationBar: CurvedNavigationBar(
+          backgroundColor: Color(0xFF000000),
+          color: Color(0xFF302E57),
+          onTap: _onItemTapped,
+          items: <Widget>[
+            Icon(
+              Icons.home,
+              color: Color(0xFFFFFFFF),
+              size: std_icon_size,
+            ),
+            Icon(
+              Icons.search,
+              color: Color(0xFFFFFFFF),
+              size: std_icon_size,
+            ),
+            Icon(
+              Icons.settings,
+              color: Color(0xFFFFFFFF),
+              size: std_icon_size,
             ),
           ]),
-        ));
+      body: Padding(
+        padding: EdgeInsets.only(top: 50, left: 10),
+        child: FadeAnimation(
+          2,
+          Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Color(0xFF302E57),
+                    child: TextStyle1("DR", 20, Color(0xFFFFFFFF),
+                        FontWeight.w400, TextAlign.center, FontStyle.normal),
+                  ),
+                  Container(
+                      child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset("assets/Key.png"),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        height: MediaQuery.of(context).size.height * 0.15,
+                        width: MediaQuery.of(context).size.width * 0.1,
+                        color: Color(0xFF302E57),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.asset("assets/Key.png"),
+                            Image.asset("assets/Key.png"),
+                            Image.asset("assets/Key.png")
+                          ],
+                        ),
+                      ),
+                    ],
+                  )),
+                ],
+              ),
+              TextStyle1("DR", 20, Color(0xFFFFFFFF), FontWeight.w400,
+                  TextAlign.center, FontStyle.normal),
+              TextStyle1("DR", 20, Color(0xFFFFFFFF), FontWeight.w400,
+                  TextAlign.center, FontStyle.normal),
+              TextStyle1("DR", 20, Color(0xFFFFFFFF), FontWeight.w400,
+                  TextAlign.center, FontStyle.normal),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
