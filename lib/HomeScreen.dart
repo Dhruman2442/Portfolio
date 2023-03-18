@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:custom_fade_animation/custom_fade_animation.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/Functions/Url.dart';
 import 'package:portfolio/Widgets/Widgets.dart';
 
 double std_icon_size = 25;
@@ -86,7 +87,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Image.asset("assets/Key.png"),
+                            GestureDetector(
+                              child: Image.asset("assets/Key.png"),
+                              onTap: () {
+                                launchURLBrowser();
+                              },
+                            ),
                             Image.asset("assets/Key.png"),
                             Image.asset("assets/Key.png")
                           ],

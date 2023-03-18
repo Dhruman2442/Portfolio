@@ -21,7 +21,7 @@ dependencies:
   http:
   carousel_slider:
   curved_navigation_bar:
-  webview_flutter:
+  url_launcher:
 
 dev_dependencies:
   flutter_test:
