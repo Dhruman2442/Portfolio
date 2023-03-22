@@ -13,16 +13,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-
-        backgroundColor: Colors.black
-      ),
+      theme:
+          ThemeData(primarySwatch: Colors.blue, backgroundColor: Colors.black),
       home: SplashScreen(
         gradientBackground:
-        const LinearGradient(colors: [Colors.black, Colors.black]),
+            const LinearGradient(colors: [Colors.black, Colors.black]),
         image: Image.asset(
-          "assets/imgprocessing.png",color: Colors.white,
+          "assets/imgprocessing.png",
+          color: Colors.white,
         ),
         photoSize: 150.0,
         seconds: 3,

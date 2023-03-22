@@ -159,12 +159,11 @@ class _SignupScreenState extends State<SignupScreen> {
           Space(40),
           Button1("Sign Up", 20, Colors.purple.shade900, FontWeight.normal,
               TextAlign.center, FontStyle.normal, () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) =>  HomeScreen()));
-              }, context),
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+          }, context),
         ],
       ),
     );
   }
-
 }

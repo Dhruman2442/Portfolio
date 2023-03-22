@@ -4,6 +4,7 @@ import 'package:custom_fade_animation/custom_fade_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/Functions/Url.dart';
 import 'package:portfolio/Widgets/Widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 double std_icon_size = 25;
 List<String> imageURL = [
@@ -16,20 +17,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  double _sliderValue = 50.0;
-
   // List<String> imageUrls = [];
   //
   // _HomeScreenState({required this.imageUrls});
 
   @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
-
     void _onItemTapped(int index) {
-      setState(() {
-        _selectedIndex = index;
-      });
+      setState(() {});
     }
 
     return Scaffold(
@@ -90,11 +85,21 @@ class _HomeScreenState extends State<HomeScreen> {
                             GestureDetector(
                               child: Image.asset("assets/Key.png"),
                               onTap: () {
-                                launchURLBrowser();
+                                _launchGithubURL();
                               },
                             ),
-                            Image.asset("assets/Key.png"),
-                            Image.asset("assets/Key.png")
+                            GestureDetector(
+                              child: Image.asset("assets/Key.png"),
+                              onTap: () {
+                                _launchLinkedinURL();
+                              },
+                            ),
+                            GestureDetector(
+                              child: Image.asset("assets/Key.png"),
+                              onTap: () {
+                                _launchGithubURL();
+                              },
+                            ),
                           ],
                         ),
                       ),
@@ -115,3 +120,17 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+const _githuburl = 'https://github.com/Dhruman2442';
+const _linkedinurl = 'https://www.linkedin.com/in/dhruman-rathod/';
+
+/// Put your custom url here.
+void _launchGithubURL() async => await launch(_githuburl, forceWebView: true)
+    ? await launch(_githuburl)
+    : throw 'Could not launch $_githuburl';
+
+/// Put your custom url here.
+void _launchLinkedinURL() async =>
+    await launch(_linkedinurl, forceWebView: true)
+        ? await launch(_linkedinurl)
+        : throw 'Could not launch $_linkedinurl';
