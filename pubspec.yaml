@@ -32,4 +32,6 @@ flutter:
 
   uses-material-design: true
   assets:
-    - assets/
+    - assets/Mainscreen.png
+    - assets/Key.png
+    - assets/Github.png
