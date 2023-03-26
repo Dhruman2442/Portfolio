@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ]),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 50, left: 10),
+          padding: const EdgeInsets.only(top: 40, left: 10),
           child: FadeAnimation(
             2,
             Column(
@@ -79,27 +79,30 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 10,
                         ),
                         Container(
-                          padding: const EdgeInsets.all(10),
-                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: const Color(0xFFECA379),
+                          ),
+                          padding: const EdgeInsets.all(5),
+                          height: MediaQuery.of(context).size.height * 0.1,
                           width: MediaQuery.of(context).size.width * 0.1,
-                          color: const Color(0xFFECA379),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               GestureDetector(
-                                child: Image.asset("assets/Key.png"),
+                                child: Image.asset(
+                                  "assets/Github.png",
+                                  fit: BoxFit.fill,
+                                ),
                                 onTap: () {
                                   _launchGithubURL();
                                 },
                               ),
                               GestureDetector(
-                                child: Image.asset("assets/Key.png"),
-                                onTap: () {
-                                  _launchLinkedinURL();
-                                },
-                              ),
-                              GestureDetector(
-                                child: Image.asset("assets/Github.png"),
+                                child: Image.asset(
+                                  "assets/linkedin.png",
+                                  fit: BoxFit.fill,
+                                ),
                                 onTap: () {
                                   _launchGithubURL();
                                 },
@@ -114,8 +117,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 TextStyle1("Dhruman Rathod", 20, const Color(0xFFECA379),
                     FontWeight.w400, TextAlign.center, FontStyle.normal),
                 TextStyle1(
-                    "Mobile Application\nDeveloper",
-                    45,
+                    "Mobile Application Developer",
+                    35,
                     const Color(0xFFFFFFFF),
                     FontWeight.w600,
                     TextAlign.center,
@@ -134,21 +137,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     FontWeight.w600,
                     TextAlign.center,
                     FontStyle.normal),
+                SizedBox(
+                  height: 10,
+                ),
                 CarouselSlider.builder(
                   itemCount: imageURL.length,
                   itemBuilder:
                       (BuildContext context, int index, int pageViewIndex) =>
                           Container(
-                    decoration: BoxDecoration(
-                        backgroundBlendMode: BlendMode.darken,
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20)),
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(40)),
                     child: Image.asset(imageURL[index]),
                   ),
                   options: CarouselOptions(
-                      aspectRatio: 1,
-                      viewportFraction: 0.5,
-                      enlargeFactor: 1.5,
+                      aspectRatio: 1.3,
+                      viewportFraction: 0.35,
+                      enlargeFactor: 0.35,
+                      enlargeCenterPage: true,
                       enableInfiniteScroll: false),
                 ),
               ],

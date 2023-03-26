@@ -14,25 +14,19 @@ import 'package:google_fonts/google_fonts.dart';
 Widget Logo(BuildContext context) {
   return Container(
     margin: const EdgeInsets.only(top: 65),
-    width: MediaQuery
-        .of(context)
-        .size
-        .width * 0.70,
+    width: MediaQuery.of(context).size.width * 0.70,
     height: 175,
     decoration: BoxDecoration(
       image: DecorationImage(
         fit: BoxFit.fill,
         colorFilter:
-        ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.darken),
+            ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.darken),
         image: const AssetImage('asset/Icons/GamescoopLogo.png'),
       ),
     ),
     child: SizedBox(
       height: 200,
-      width: MediaQuery
-          .of(context)
-          .size
-          .width,
+      width: MediaQuery.of(context).size.width,
     ),
   );
 }
@@ -42,7 +36,7 @@ Widget TextStyle1(String text, double fontSize, Color color,
   return Text(
     text,
     textAlign: textAlign,
-    style: GoogleFonts.poppins(
+    style: GoogleFonts.rubik(
         fontSize: fontSize,
         color: color,
         fontWeight: fontWeight,
@@ -56,7 +50,8 @@ Widget Space(double height) {
   );
 }
 
-Widget Textfield1(String ltext,
+Widget Textfield1(
+    String ltext,
     String htext,
     double fontSize,
     Color color,
@@ -97,7 +92,8 @@ Widget Textfield1(String ltext,
   );
 }
 
-Widget Textfield2(String ltext,
+Widget Textfield2(
+    String ltext,
     String htext,
     double fontSize,
     Color color,
@@ -140,7 +136,8 @@ Widget Textfield2(String ltext,
   );
 }
 
-Widget TextfieldPassword(String ltext,
+Widget TextfieldPassword(
+    String ltext,
     String htext,
     double fontSize,
     Color color,
@@ -193,7 +190,8 @@ Widget TextfieldPassword(String ltext,
   );
 }
 
-Widget Button1(String text,
+Widget Button1(
+    String text,
     double size,
     Color color,
     FontWeight fontWeight,
@@ -204,12 +202,9 @@ Widget Button1(String text,
   return Container(
     clipBehavior: Clip.antiAlias,
     decoration:
-    const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8))),
+        const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(8))),
     height: 50,
-    width: MediaQuery
-        .of(context)
-        .size
-        .width * 0.95,
+    width: MediaQuery.of(context).size.width * 0.95,
     child: ElevatedButton(
       onPressed: onPressed,
       // color: color,
@@ -219,7 +214,8 @@ Widget Button1(String text,
   );
 }
 
-Widget TextButton1(VoidCallback onpressed,
+Widget TextButton1(
+    VoidCallback onpressed,
     String text,
     double fontSize,
     Color color,
@@ -236,8 +232,10 @@ Widget IconButtons(Icon icon, VoidCallback onpressed) {
   return IconButton(icon: icon, onPressed: onpressed);
 }
 
-Widget Cards(Color color,
-    Widget child,) {
+Widget Cards(
+  Color color,
+  Widget child,
+) {
   return Card(
     shadowColor: Colors.black,
     borderOnForeground: true,
@@ -245,7 +243,6 @@ Widget Cards(Color color,
     elevation: 5,
     margin: const EdgeInsets.all(10),
     color: color,
-
     shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(25))),
     child: child,
@@ -283,7 +280,6 @@ Widget customgamelisttile(Color colors, String images, VoidCallback onpress) {
   );
 }
 
-
 Widget WeaponsTiles() {
   return TextStyle1("Weapons", 16, Colors.white, FontWeight.bold,
       TextAlign.center, FontStyle.normal);
@@ -297,8 +293,10 @@ Widget MapsTiles() {
 //////////////////////////////////////////////////////////////////////////////////
 
 // News Page Widget
-Widget customnewstile(String title,
-    Color color,) {
+Widget customnewstile(
+  String title,
+  Color color,
+) {
   return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       shadowColor: Colors.white,
@@ -310,14 +308,14 @@ Widget customnewstile(String title,
             padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20), color: Colors.black
-              // image: DecorationImage(
-              //   fit: BoxFit.cover,
-              //   alignment: Alignment.center,
-              //   image: images,
-              //   colorFilter: ColorFilter.mode(
-              //       Colors.transparent.withOpacity(0.7), BlendMode.srcATop),
-              // ),
-            ),
+                // image: DecorationImage(
+                //   fit: BoxFit.cover,
+                //   alignment: Alignment.center,
+                //   image: images,
+                //   colorFilter: ColorFilter.mode(
+                //       Colors.transparent.withOpacity(0.7), BlendMode.srcATop),
+                // ),
+                ),
             child: ListTile(
               title: TextStyle1(title, 20, Colors.white, FontWeight.w400,
                   TextAlign.center, FontStyle.normal),
@@ -344,7 +342,7 @@ Widget customNewsDetails(String images, String title, String content) {
         Card(
           clipBehavior: Clip.antiAliasWithSaveLayer,
           shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           elevation: 10,
           shadowColor: Colors.grey.shade700,
           child: Image.network(
@@ -373,8 +371,8 @@ Widget customNewsDetails(String images, String title, String content) {
   );
 }
 
-Widget RolesTile(String title, AssetImage images, Color colors,
-    VoidCallback click) {
+Widget RolesTile(
+    String title, AssetImage images, Color colors, VoidCallback click) {
   return GestureDetector(
     onTap: click,
     child: Card(
@@ -440,7 +438,7 @@ Widget SliderAgentListTile(String title, Color colors, AssetImage images,
             elevation: 10,
             shadowColor: Colors.grey.shade900,
             shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             color: Colors.transparent,
             child: Column(
               children: [
@@ -546,7 +544,8 @@ Widget SliderMapListTile(String title, Color colors, String images) {
   ]);
 }
 
-Widget Tabs(VoidCallback onPressed,
+Widget Tabs(
+    VoidCallback onPressed,
     String text,
     double size,
     Color color,
@@ -573,10 +572,7 @@ Widget Tabs(VoidCallback onPressed,
         ),
         // ),
         Container(
-          width: MediaQuery
-              .of(context)
-              .size
-              .width / 3,
+          width: MediaQuery.of(context).size.width / 3,
           margin: const EdgeInsets.only(bottom: 15),
           child: TextStyle1(
               text, size, tabtextcolor, fontWeight, textAlign, fontStyle),
