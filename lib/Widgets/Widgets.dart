@@ -1,4 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, deprecated_member_use
 
 import 'dart:ffi';
 
@@ -6,11 +5,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// final List<DetailsAgentsModel> AgentDetailsData = List.generate(
-//     AgentName.length,
-//         (index) => DetailsAgentsModel(AgentName[index], ValorantAgentImages[index],
-//         AgentDescription[index], CardColor[index]));
-// // Common Widget
 Widget Logo(BuildContext context) {
   return Container(
     margin: const EdgeInsets.only(top: 65),

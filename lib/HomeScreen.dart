@@ -14,6 +14,7 @@ List<String> imageURL = [
   "assets/News Feed.png",
   "assets/News Details.png",
 ];
+bool carousel_visibility = true;
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -140,21 +141,43 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 10,
                 ),
-                CarouselSlider.builder(
-                  itemCount: imageURL.length,
-                  itemBuilder:
-                      (BuildContext context, int index, int pageViewIndex) =>
-                          Container(
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(40)),
-                    child: Image.asset(imageURL[index]),
+                Visibility(
+                  visible: !carousel_visibility,
+                  child: CarouselSlider.builder(
+                    itemCount: imageURL.length,
+                    itemBuilder:
+                        (BuildContext context, int index, int pageViewIndex) =>
+                            Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40)),
+                      child: Image.asset(imageURL[index]),
+                    ),
+                    options: CarouselOptions(
+                        aspectRatio: 1.3,
+                        viewportFraction: 0.35,
+                        enlargeFactor: 0.35,
+                        enlargeCenterPage: true,
+                        enableInfiniteScroll: false),
                   ),
-                  options: CarouselOptions(
-                      aspectRatio: 1.3,
-                      viewportFraction: 0.35,
-                      enlargeFactor: 0.35,
-                      enlargeCenterPage: true,
-                      enableInfiniteScroll: false),
+                ),
+                Visibility(
+                  visible: !carousel_visibility,
+                  child: CarouselSlider.builder(
+                    itemCount: imageURL.length,
+                    itemBuilder:
+                        (BuildContext context, int index, int pageViewIndex) =>
+                            Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40)),
+                      child: Image.asset(imageURL[index]),
+                    ),
+                    options: CarouselOptions(
+                        aspectRatio: 1.3,
+                        viewportFraction: 0.35,
+                        enlargeFactor: 0.35,
+                        enlargeCenterPage: true,
+                        enableInfiniteScroll: false),
+                  ),
                 ),
               ],
             ),
