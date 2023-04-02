@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fit: BoxFit.fill,
                                 ),
                                 onTap: () {
-                                  _launchGithubURL();
+                                  _launchLinkedinURL();
                                 },
                               ),
                             ],
