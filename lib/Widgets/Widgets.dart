@@ -1,4 +1,3 @@
-
 import 'dart:ffi';
 
 import 'package:carousel_slider/carousel_slider.dart';
@@ -200,8 +199,10 @@ Widget Button1(
     height: 50,
     width: MediaQuery.of(context).size.width * 0.95,
     child: ElevatedButton(
+      style: ElevatedButton.styleFrom(backgroundColor: color),
       onPressed: onPressed,
       // color: color,
+
       child: TextStyle1(
           text, size, Colors.white, fontWeight, textAlign, fontStyle),
     ),

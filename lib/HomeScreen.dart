@@ -6,7 +6,7 @@ import 'package:portfolio/Widgets/Widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 double std_icon_size = 25;
-List<String> imageURL = [
+List<String> gamescoopImages = [
   "assets/Mainscreen.png",
   "assets/Signin.png",
   "assets/Games.png",
@@ -14,6 +14,16 @@ List<String> imageURL = [
   "assets/News Feed.png",
   "assets/News Details.png",
 ];
+List<String> freshwakeImages = [
+  "assets/SplashScreen.png",
+  "assets/LoginScreen.png",
+  "assets/SignupScreen.png",
+  "assets/MainScreenFW.png",
+  "assets/AlarmScreen.png",
+  "assets/StopwatchScreen.png",
+  "assets/ProfileScreen.png",
+];
+
 bool carousel_visibility = true;
 
 class HomeScreen extends StatefulWidget {
@@ -143,16 +153,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 //     TextAlign.center,
                 //     FontStyle.normal),
                 Space(15),
+                Button1("Projects", 50, Color(0xFFECA379), FontWeight.w500,
+                    TextAlign.center, FontStyle.normal, () {
+                  setState(() {
+                    carousel_visibility = !carousel_visibility;
+                  });
+                }, context),
                 Visibility(
                   visible: carousel_visibility,
                   child: CarouselSlider.builder(
-                    itemCount: imageURL.length,
+                    itemCount: gamescoopImages.length,
                     itemBuilder:
                         (BuildContext context, int index, int pageViewIndex) =>
                             Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40)),
-                      child: Image.asset(imageURL[index]),
+                      child: Image.asset(gamescoopImages[index]),
                     ),
                     options: CarouselOptions(
                         aspectRatio: 1.3,
@@ -165,13 +181,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 Visibility(
                   visible: !carousel_visibility,
                   child: CarouselSlider.builder(
-                    itemCount: imageURL.length,
+                    itemCount: freshwakeImages.length,
                     itemBuilder:
                         (BuildContext context, int index, int pageViewIndex) =>
                             Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40)),
-                      child: Image.asset(imageURL[index]),
+                      child: Image.asset(freshwakeImages[index]),
                     ),
                     options: CarouselOptions(
                         aspectRatio: 1.3,
