@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: const Color(0xFF000000),
 // appBar: AppBar(backgroundColor: Color(0xFF302E57)),
       bottomNavigationBar: CurvedNavigationBar(
-          animationDuration: Duration(seconds: 1),
+          animationDuration: const Duration(seconds: 1),
           backgroundColor: const Color(0xFF000000),
           color: const Color(0xFFECA379),
           onTap: _onItemTapped,
@@ -115,8 +115,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
                   ],
                 ),
-                TextStyle1("Dhruman Rathod", 20, const Color(0xFFECA379),
+                Space(15),
+                TextStyle1("Dhruman Rathod", 25, const Color(0xFFECA379),
                     FontWeight.w400, TextAlign.center, FontStyle.normal),
+                Space(15),
                 TextStyle1(
                     "Mobile Application Developer",
                     35,
@@ -124,25 +126,25 @@ class _HomeScreenState extends State<HomeScreen> {
                     FontWeight.w600,
                     TextAlign.center,
                     FontStyle.normal),
-                TextStyle1(
-                    "I love to develop mobile applications\nManage everything on one click.",
-                    15,
-                    const Color(0xFF9A9A9A),
-                    FontWeight.w400,
-                    TextAlign.center,
-                    FontStyle.normal),
-                TextStyle1(
-                    "Presenting Imagination to Your Screen",
-                    22,
-                    const Color(0xFFECA379),
-                    FontWeight.w600,
-                    TextAlign.center,
-                    FontStyle.normal),
-                SizedBox(
-                  height: 10,
-                ),
+                Space(15),
+                // TextStyle1(
+                //     "I love to develop mobile applications\nManage everything on one click.",
+                //     15,
+                //     const Color(0xFF9A9A9A),
+                //     FontWeight.w400,
+                //     TextAlign.center,
+                //     FontStyle.normal),
+                // Space(15),
+                // TextStyle1(
+                //     "Presenting Imagination to Your Screen",
+                //     22,
+                //     const Color(0xFFECA379),
+                //     FontWeight.w600,
+                //     TextAlign.center,
+                //     FontStyle.normal),
+                Space(15),
                 Visibility(
-                  visible: !carousel_visibility,
+                  visible: carousel_visibility,
                   child: CarouselSlider.builder(
                     itemCount: imageURL.length,
                     itemBuilder:
