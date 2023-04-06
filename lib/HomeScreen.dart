@@ -153,12 +153,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 //     TextAlign.center,
                 //     FontStyle.normal),
                 Space(15),
-                Button1("Projects", 50, Color(0xFFECA379), FontWeight.w500,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width*0.4,
+                  child:
+                Button1("Projects", 20, Color(0xFFECA379), FontWeight.w500,
                     TextAlign.center, FontStyle.normal, () {
                   setState(() {
                     carousel_visibility = !carousel_visibility;
                   });
-                }, context),
+                }, context),),
                 Visibility(
                   visible: carousel_visibility,
                   child: CarouselSlider.builder(
