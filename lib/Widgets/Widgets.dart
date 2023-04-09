@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -239,9 +237,33 @@ Widget Cards(
     margin: const EdgeInsets.all(10),
     color: color,
     shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(25))),
+        borderRadius: BorderRadius.all(Radius.circular(30))),
     child: child,
   );
+}
+
+Widget ProjectCards(BuildContext context, Color color, AssetImage assetImage) {
+  return GestureDetector(
+      onTap: () {},
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
+        clipBehavior: Clip.antiAlias,
+        borderOnForeground: true,
+        child: Container(
+            height: MediaQuery.of(context).size.height * 0.5,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  fit: BoxFit.fill,
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.5), BlendMode.darken),
+                  image: assetImage),
+            ),
+            child: TextStyle1("GameScoop", 40, color, FontWeight.w600,
+                TextAlign.center, FontStyle.normal)),
+      ));
 }
 
 // Page Widget
