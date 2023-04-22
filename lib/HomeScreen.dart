@@ -172,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () {},
                           child: Card(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
+                              borderRadius: BorderRadius.circular(24),
                             ),
                             clipBehavior: Clip.antiAlias,
                             borderOnForeground: true,
