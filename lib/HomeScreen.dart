@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 child: TextStyle1(
                                     projectName[index],
-                                    40,
+                                    41,
                                     Color(0xFFFFFFFF),
                                     FontWeight.w600,
                                     TextAlign.center,
