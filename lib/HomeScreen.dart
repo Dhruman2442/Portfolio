@@ -78,10 +78,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     CircleAvatar(
                       backgroundColor: const Color(0xFFECA379),
                       child: TextStyle1("DR", 20, const Color(0xFF000000),
-                          FontWeight.w400, TextAlign.center, FontStyle.normal),
+                          FontWeight.w800, TextAlign.center, FontStyle.normal),
                     ),
-                    Container(
-                        child: Row(
+                    Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image.asset("assets/Key.png"),
@@ -94,24 +93,29 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: const Color(0xFFECA379),
                           ),
                           padding: const EdgeInsets.all(5),
-                          height: MediaQuery.of(context).size.height * 0.1,
-                          width: MediaQuery.of(context).size.width * 0.1,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               GestureDetector(
                                 child: Image.asset(
                                   "assets/Github.png",
-                                  fit: BoxFit.fill,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.1,
+                                  height:
+                                      MediaQuery.of(context).size.width * 0.1,
                                 ),
                                 onTap: () {
                                   _launchGithubURL();
                                 },
                               ),
+                              Space(7),
                               GestureDetector(
                                 child: Image.asset(
                                   "assets/linkedin.png",
-                                  fit: BoxFit.fill,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.1,
+                                  height:
+                                      MediaQuery.of(context).size.width * 0.1,
                                 ),
                                 onTap: () {
                                   _launchLinkedinURL();
@@ -121,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ],
-                    )),
+                    ),
                   ],
                 ),
                 Space(15),
@@ -136,30 +140,41 @@ class _HomeScreenState extends State<HomeScreen> {
                     TextAlign.center,
                     FontStyle.normal),
                 Space(15),
-                // TextStyle1(
-                //     "I love to develop mobile applications\nManage everything on one click.",
-                //     15,
-                //     const Color(0xFF9A9A9A),
-                //     FontWeight.w400,
-                //     TextAlign.center,
-                //     FontStyle.normal),
-                // Space(15),
-                // TextStyle1(
-                //     "Presenting Imagination to Your Screen",
-                //     22,
-                //     const Color(0xFFECA379),
-                //     FontWeight.w600,
-                //     TextAlign.center,
-                //     FontStyle.normal),
-                Space(15),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  child: Button1("Projects", 20, Color(0xFFECA379),
-                      FontWeight.w500, TextAlign.center, FontStyle.normal, () {
-                    setState(() {
-                      carousel_visibility = !carousel_visibility;
-                    });
-                  }, context),
+                // SizedBox(
+                //   width: MediaQuery.of(context).size.width * 0.4,
+                //   child: Button1("Projects", 20, Color(0xFFECA379),
+                //       FontWeight.w500, TextAlign.center, FontStyle.normal, () {
+                //     setState(() {
+                //       carousel_visibility = !carousel_visibility;
+                //     });
+                //   }, context),
+                // ),
+                Container(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          ProjectCards("assets/Experience50.png", () {}),
+                          ProjectCards("assets/Project50.png", () {}),
+                          ProjectCards("assets/Thesis50.png", () {}),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          ProjectCards("assets/Project50.png", () {}),
+                          ProjectCards("assets/Project50.png", () {}),
+                          ProjectCards("assets/Project50.png", () {})
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          ProjectCards("assets/Project50.png", () {}),
+                          ProjectCards("assets/Project50.png", () {}),
+                          ProjectCards("assets/Project50.png", () {})
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 Space(10),
                 CarouselSlider.builder(
@@ -184,14 +199,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
                                     colorFilter: ColorFilter.mode(
-                                        Colors.black.withOpacity(0.5),
+                                        Colors.black.withOpacity(0.4),
                                         BlendMode.darken),
                                     image: AssetImage(projectImages[index]),
                                   ),
                                 ),
                                 child: TextStyle1(
                                     projectName[index],
-                                    41,
+                                    0,
                                     Color(0xFFFFFFFF),
                                     FontWeight.w600,
                                     TextAlign.center,
@@ -205,45 +220,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       enlargeFactor: 0.5,
                       enableInfiniteScroll: false),
                 ),
-
-                // Visibility(
-                //   visible: !carousel_visibility,
-                //   child: CarouselSlider.builder(
-                //     itemCount: gamescoopImages.length,
-                //     itemBuilder:
-                //         (BuildContext context, int index, int pageViewIndex) =>
-                //             Container(
-                //       decoration: BoxDecoration(
-                //           borderRadius: BorderRadius.circular(40)),
-                //       child: Image.asset(gamescoopImages[index]),
-                //     ),
-                //     options: CarouselOptions(
-                //         aspectRatio: 1.3,
-                //         viewportFraction: 0.35,
-                //         enlargeFactor: 0.35,
-                //         enlargeCenterPage: true,
-                //         enableInfiniteScroll: false),
-                //   ),
-                // ),
-                // Visibility(
-                //   visible: !carousel_visibility,
-                //   child: CarouselSlider.builder(
-                //     itemCount: freshwakeImages.length,
-                //     itemBuilder:
-                //         (BuildContext context, int index, int pageViewIndex) =>
-                //             Container(
-                //       decoration: BoxDecoration(
-                //           borderRadius: BorderRadius.circular(40)),
-                //       child: Image.asset(freshwakeImages[index]),
-                //     ),
-                //     options: CarouselOptions(
-                //         aspectRatio: 1.3,
-                //         viewportFraction: 0.35,
-                //         enlargeFactor: 0.35,
-                //         enlargeCenterPage: true,
-                //         enableInfiniteScroll: false),
-                //   ),
-                // ),
               ],
             ),
           ),

@@ -242,29 +242,29 @@ Widget Cards(
   );
 }
 
-Widget ProjectCards(BuildContext context, Color color, AssetImage assetImage) {
-  return GestureDetector(
-      onTap: () {},
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25),
-        ),
-        clipBehavior: Clip.antiAlias,
-        borderOnForeground: true,
-        child: Container(
-            height: MediaQuery.of(context).size.height * 0.5,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.5), BlendMode.darken),
-                  image: assetImage),
-            ),
-            child: TextStyle1("GameScoop", 40, color, FontWeight.w600,
-                TextAlign.center, FontStyle.normal)),
-      ));
-}
+// Widget ProjectCards(BuildContext context, Color color, AssetImage assetImage) {
+//   return GestureDetector(
+//       onTap: () {},
+//       child: Card(
+//         shape: RoundedRectangleBorder(
+//           borderRadius: BorderRadius.circular(25),
+//         ),
+//         clipBehavior: Clip.antiAlias,
+//         borderOnForeground: true,
+//         child: Container(
+//             height: MediaQuery.of(context).size.height * 0.5,
+//             alignment: Alignment.center,
+//             decoration: BoxDecoration(
+//               image: DecorationImage(
+//                   fit: BoxFit.fill,
+//                   colorFilter: ColorFilter.mode(
+//                       Colors.black.withOpacity(0.5), BlendMode.darken),
+//                   image: assetImage),
+//             ),
+//             child: TextStyle1("GameScoop", 40, color, FontWeight.w600,
+//                 TextAlign.center, FontStyle.normal)),
+//       ));
+// }
 
 // Page Widget
 Widget customgamelisttile(Color colors, String images, VoidCallback onpress) {
@@ -503,24 +503,20 @@ Widget SliderAgentListTile(String title, Color colors, AssetImage images,
   );
 }
 
-Widget buildSliderMaps(BuildContext context, List<Widget> items) {
-  return CarouselSlider(
-    items: items,
-
-    //Slider Container properties
-    options: CarouselOptions(
-      enlargeCenterPage: true,
-      pauseAutoPlayOnTouch: true,
-      scrollPhysics: const BouncingScrollPhysics(),
-      // autoPlay: true,
-      autoPlayCurve: Curves.ease,
-      enableInfiniteScroll: true,
-      autoPlayAnimationDuration: const Duration(milliseconds: 1000),
-      viewportFraction: 0.7,
-      disableCenter: true,
-      clipBehavior: Clip.hardEdge,
-    ),
-  );
+Widget ProjectCards(String images, VoidCallback onTap) {
+  return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        color: Colors.black,
+        elevation: 0.6,
+        margin: EdgeInsets.all(10),
+        child: Center(
+          child: Image.asset(
+            images,
+            color: Colors.white,
+          ),
+        ),
+      ));
 }
 
 Widget SliderMapListTile(String title, Color colors, String images) {
