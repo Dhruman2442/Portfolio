@@ -1,35 +1,75 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/HomeScreen.dart';
-import 'package:splashscreen/splashscreen.dart';
+import 'package:folio/provider/app_provider.dart';
+import 'package:folio/provider/drawer_provider.dart';
+import 'package:folio/provider/scroll_provider.dart';
+import 'package:folio/sections/main/main_section.dart';
+import 'package:provider/provider.dart';
+import 'package:url_strategy/url_strategy.dart';
+import 'package:folio/configs/core_theme.dart' as theme;
 
-import 'LoginScreen.dart';
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setPathUrlStrategy();
+  runApp(const MyApp());
+}
 
-void main() => runApp(MyApp());
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
+  @override
+  MyAppState createState() => MyAppState();
+}
+
+class MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppProvider()),
+        ChangeNotifierProvider(create: (_) => DrawerProvider()),
+        ChangeNotifierProvider(create: (_) => ScrollProvider()),
+      ],
+      child: Consumer<AppProvider>(
+        builder: (context, value, _) => MaterialChild(
+          provider: value,
+        ),
+      ),
+    );
+  }
+}
+
+class MaterialChild extends StatefulWidget {
+  final AppProvider provider;
+  const MaterialChild({Key? key, required this.provider}) : super(key: key);
+
+  @override
+  State<MaterialChild> createState() => _MaterialChildState();
+}
+
+class _MaterialChildState extends State<MaterialChild> {
+  void initAppTheme() {
+    final appProviders = AppProvider.state(context);
+    appProviders.init();
+  }
+
+  @override
+  void initState() {
+    initAppTheme();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme:
-          ThemeData(primarySwatch: Colors.blue, backgroundColor: Colors.black),
-      home: SplashScreen(
-        gradientBackground:
-            const LinearGradient(colors: [Colors.black, Colors.black]),
-        image: Image.asset(
-          "assets/imgprocessing.png",
-          color: Colors.white,
-        ),
-        photoSize: 150.0,
-        seconds: 3,
-        navigateAfterSeconds: HomeScreen(),
-        loadingText: Text("Portfolio",
-            style: GoogleFonts.balooBhai2(color: Colors.white, fontSize: 50)),
-        loaderColor: Colors.transparent,
-        backgroundColor: Colors.white,
-      ),
+      title: 'Dhruman',
+      theme: theme.themeLight,
+      darkTheme: theme.themeDark,
+      themeMode: widget.provider.themeMode,
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const MainPage(),
+      },
     );
   }
 }
