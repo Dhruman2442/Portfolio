@@ -9,9 +9,9 @@ class WorkUtils {
 
   static const List<String> communityLinks = [
     "https://www.uwindsor.ca/",
-    "https://www.facebook.com/search/top?q=university%20of%20windsor/",
-    "https://skydashboard-506ed.web.app/"
+    "https://www.linkedin.com/company/skyacres-agrotechnologies-inc/",
+    "https://www.linkedin.com/company/rewaa-tech-verge/"
   ];
 
-  static const List<double> communityLogoHeight = [60.0, 70.0, 30.0, 70.0];
+  static const List<double> communityLogoHeight = [60.0, 70.0, 70.0, 70.0];
 }
