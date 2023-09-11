@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "firebase": "^10.3.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "flutter build web"
   }
 }
