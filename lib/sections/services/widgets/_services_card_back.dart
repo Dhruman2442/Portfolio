@@ -46,44 +46,20 @@ class _ServiceCardBackWidget extends StatelessWidget {
                           MaterialButton(
                             height: 40.0,
                             onPressed: () => openURL(
-                              'https://api.whatsapp.com/send?phone=2267591717',
-                            ),
-                            color: const Color(0xff34CB62),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                const Icon(
-                                  FontAwesomeIcons.whatsapp,
-                                  color: Colors.white,
-                                ),
-                                Space.x!,
-                                Text(
-                                  'WhatsApp',
-                                  style: AppText.l1!.copyWith(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Space.y1!,
-                          MaterialButton(
-                            height: 40.0,
-                            onPressed: () => openURL(
                               'https://www.linkedin.com/in/dhruman-rathod/',
                             ),
-                            color: const Color(0xff13A800),
+                            color: const Color(0xff3d75a9),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Image.network(
-                                  'https://img.icons8.com/ios-filled/50/000000/upwork.png',
+                                  'https://img.icons8.com/ios-filled/50/000000/linkedin.png',
                                   height: 35.0,
                                   color: Colors.white,
                                 ),
                                 Space.x!,
                                 Text(
-                                  'Upwork',
+                                  'LinkedIn',
                                   style: AppText.l1!.copyWith(
                                     color: Colors.white,
                                   ),
